@@ -202,11 +202,11 @@ export function TestimonialsSection() {
         {/* Stats */}
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">98%</div>
+            <div className="text-3xl font-bold text-primary">99%</div>
             <div className="text-sm text-muted-foreground">Satisfação</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">500+</div>
+            <div className="text-3xl font-bold text-primary">350+</div>
             <div className="text-sm text-muted-foreground">Vidas transformadas</div>
           </div>
           <div className="text-center">
@@ -214,7 +214,7 @@ export function TestimonialsSection() {
             <div className="text-sm text-muted-foreground">Avaliação média</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">127</div>
+            <div className="text-3xl font-bold text-primary">187</div>
             <div className="text-sm text-muted-foreground">Avaliações</div>
           </div>
         </div>
