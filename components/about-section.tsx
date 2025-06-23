@@ -153,7 +153,7 @@ export function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button 
                 asChild
-                className="btn-hover gradient-primary text-white border-0 shadow-lg shadow-primary/25"
+                className="btn-hover gradient-primary text-gray-800 drop-shadow-lg border-0 shadow-lg shadow-primary/25"
               >
                 <Link href="#agendamento" className="flex items-center space-x-2">
                   <Calendar className="w-4 h-4" />

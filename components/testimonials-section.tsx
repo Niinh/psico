@@ -232,7 +232,7 @@ export function TestimonialsSection() {
             <Button 
               asChild
               size="lg"
-              className="btn-hover gradient-primary text-white"
+              className="btn-hover gradient-primary text-gray-800 drop-shadow-lg"
             >
               <Link href="#agendamento" className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />

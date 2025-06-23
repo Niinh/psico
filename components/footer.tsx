@@ -166,7 +166,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © {currentYear} Yanca Pina - Psicóloga. Todos os direitos reservados.
+            &copy; {currentYear} Yanca Pina - Psicóloga. Todos os direitos reservados.
           </div>
           
           <div className="flex items-center space-x-6">
@@ -185,7 +185,7 @@ export function Footer() {
             <Button 
               asChild
               size="sm"
-              className="btn-hover gradient-primary text-white"
+              className="btn-hover gradient-primary text-gray-800 drop-shadow-lg w-full md:w-auto"
             >
               <Link href="#agendamento" className="flex items-center space-x-1">
                 <Calendar className="w-3 h-3" />

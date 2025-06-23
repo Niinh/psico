@@ -314,7 +314,7 @@ export function AppointmentSection() {
                   {/* Submit Button */}
                   <Button 
                     type="submit" 
-                    className="w-full btn-hover gradient-primary text-white"
+                    className="w-full btn-hover gradient-primary text-gray-800 drop-shadow-lg"
                     disabled={isSubmitting}
                     size="lg"
                   >

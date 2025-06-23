@@ -359,7 +359,7 @@ export function ServicesSection() {
                   <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-primary/10">
                     <Button 
                       asChild
-                      className="flex-1 btn-hover gradient-primary text-white border-0 shadow-lg shadow-primary/25"
+                      className="flex-1 btn-hover gradient-primary text-gray-800 drop-shadow-lg border-0 shadow-lg shadow-primary/25"
                       onClick={() => setOpenModal(null)}
                     >
                       <Link href="#agendamento" className="flex items-center justify-center space-x-2">
@@ -394,7 +394,7 @@ export function ServicesSection() {
             <Button 
               asChild
               size="lg"
-              className="btn-hover gradient-primary text-white border-0 shadow-lg shadow-primary/25"
+              className="btn-hover gradient-primary text-gray-800 drop-shadow-lg border-0 shadow-lg shadow-primary/25"
             >
               <Link href="#contato" className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />

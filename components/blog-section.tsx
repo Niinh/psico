@@ -460,7 +460,7 @@ export function BlogSection() {
                     
                     <Button 
                       asChild
-                      className="btn-hover gradient-primary text-white"
+                      className="btn-hover gradient-primary text-gray-800 drop-shadow-lg"
                       onClick={() => setOpenModal(null)}
                     >
                       <Link href="#agendamento" className="flex items-center space-x-2">
