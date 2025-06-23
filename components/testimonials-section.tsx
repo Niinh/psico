@@ -125,11 +125,11 @@ export function TestimonialsSection() {
         {/* Main Testimonial */}
         <div className={`max-w-4xl mx-auto mb-12 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
           <Card className="relative overflow-hidden shadow-2xl card-hover">
-            <CardContent className="p-8 md:p-12">
+            <CardContent className="p-6 sm:p-8 md:p-12">
               <Quote className="w-12 h-12 text-primary/20 mb-6" />
               
               <blockquote className="text-lg md:text-xl leading-relaxed mb-8 text-muted-foreground italic">
-                "{currentTestimonial.text}"
+                &quot;{currentTestimonial.text}&quot;
               </blockquote>
               
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
@@ -151,7 +151,7 @@ export function TestimonialsSection() {
                   </div>
                 </div>
                 
-                <div className="text-right space-y-1">
+                <div className="text-left md:text-right space-y-1">
                   <div className="text-sm font-medium text-primary">
                     {currentTestimonial.result}
                   </div>

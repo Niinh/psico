@@ -345,7 +345,7 @@ export function BlogSection() {
                 </Card>
               </DialogTrigger>
 
-              <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+              <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
                 <DialogHeader className="space-y-4 pb-6 border-b border-primary/10">
                   <div className="flex items-start justify-between">
                     <div className="space-y-3 flex-1">
@@ -355,7 +355,7 @@ export function BlogSection() {
                       <DialogTitle className="text-2xl md:text-3xl font-serif text-primary leading-tight">
                         {article.title}
                       </DialogTitle>
-                      <div className="flex items-center space-x-6 text-sm text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                         <div className="flex items-center space-x-2">
                           <User className="w-4 h-4" />
                           <span>Yanca Pina</span>
@@ -371,9 +371,32 @@ export function BlogSection() {
                       </div>
                     </div>
                     
+
+                  </div>
+                </DialogHeader>
+
+                <div className="py-6">
+                  <div className="relative mb-8">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      width={800}
+                      height={400}
+                      className="object-cover w-full h-64 rounded-lg"
+                    />
+                  </div>
+                  
+                  <div 
+                    className="prose prose-lg max-w-none prose-headings:text-primary prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground"
+                    dangerouslySetInnerHTML={{ __html: article.content }}
+                  />
+                  
+                  <Separator className="my-8" />
+                  
+                  <div className="flex items-center justify-between">
                     <Dialog open={shareOpen} onOpenChange={setShareOpen}>
                       <DialogTrigger asChild>
-                        <Button variant="outline" size="sm" className="ml-4">
+                        <Button variant="outline" size="sm">
                           <Share2 className="w-4 h-4 mr-2" />
                           Compartilhar
                         </Button>
@@ -434,38 +457,6 @@ export function BlogSection() {
                         </div>
                       </DialogContent>
                     </Dialog>
-                  </div>
-                </DialogHeader>
-
-                <div className="py-6">
-                  <div className="relative mb-8">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      width={800}
-                      height={400}
-                      className="object-cover w-full h-64 rounded-lg"
-                    />
-                  </div>
-                  
-                  <div 
-                    className="prose prose-lg max-w-none prose-headings:text-primary prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground"
-                    dangerouslySetInnerHTML={{ __html: article.content }}
-                  />
-                  
-                  <Separator className="my-8" />
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <Eye className="w-4 h-4" />
-                        <span>{article.views} visualizações</span>
-                      </div>
-                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <Heart className="w-4 h-4" />
-                        <span>{article.likes} curtidas</span>
-                      </div>
-                    </div>
                     
                     <Button 
                       asChild

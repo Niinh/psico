@@ -64,7 +64,7 @@ export function AboutSection() {
   return (
     <section id="sobre" className="py-24 bg-muted/30" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image Side */}
           <div className={`relative ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
             <div className="relative">
@@ -77,7 +77,7 @@ export function AboutSection() {
               />
               
               {/* Overlay Card */}
-              <Card className="absolute -bottom-8 -right-8 w-64 card-hover border-primary/20">
+              <Card className="relative mt-8 mx-auto w-64 lg:absolute lg:mt-0 lg:-bottom-8 lg:-right-8 card-hover border-primary/20">
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary">99%</div>
@@ -120,7 +120,7 @@ export function AboutSection() {
             {/* Specialties */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Especialidades</h3>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {specialties.map((specialty, index) => (
                   <Badge 
                     key={index} 
@@ -134,7 +134,7 @@ export function AboutSection() {
             </div>
 
             {/* Achievements Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
                 <div 
                   key={index}

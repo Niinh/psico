@@ -14,7 +14,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-sophisticated">
+    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-sophisticated pt-24 lg:pt-0">
       {/* Background Gradient */}
       <div className="absolute inset-0 gradient-sophisticated" />
       
@@ -35,13 +35,45 @@ export function HeroSection() {
       </svg>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className={`space-y-8 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Image Container - Appears first on mobile, second on desktop */}
+          <div className={`relative lg:order-last ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+            <div className="relative">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl card-hover mx-auto max-w-sm lg:max-w-none">
+                <Image
+                  src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Yanca Pina - Psicóloga"
+                  width={600}
+                  height={700}
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-card p-6 rounded-xl shadow-lg border border-primary/10 animate-float z-20">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <MessageCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold">Consulta Online</div>
+                    <div className="text-sm text-muted-foreground">Disponível 24/7</div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -top-6 -right-6 w-24 h-24 decoration-rose rounded-full -z-10" />
+              <div className="absolute -bottom-12 -right-12 w-32 h-32 decoration-lilac rounded-full -z-10" />
+            </div>
+          </div>
+
+          {/* Content Container - Appears second on mobile, first on desktop */}
+          <div className={`space-y-8 text-center lg:text-left ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
             <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium border border-primary/20">
-                <Star className="w-4 h-4 mr-2" />
-                Psicóloga CRP 06/123456
+              <div className="flex justify-center lg:justify-start">
+                <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium border border-primary/20">
+                  <Star className="w-4 h-4 mr-2" />
+                  Psicóloga CRP 06/123456
+                </div>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight">
@@ -49,13 +81,12 @@ export function HeroSection() {
                 <span className="text-gradient block">equilíbrio emocional</span>
               </h1>
               
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Especialista em terapia cognitivo-comportamental, oferecendo acolhimento 
                 profissional para ansiedade, relacionamentos e desenvolvimento pessoal.
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center p-4 rounded-lg bg-background/50 backdrop-blur-sm border border-primary/10">
                 <div className="text-2xl font-bold text-primary">350+</div>
@@ -71,8 +102,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 asChild
                 size="lg"
@@ -98,8 +128,7 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center space-x-6 pt-6 border-t border-border/50">
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 pt-6 border-t border-border/50 justify-center lg:justify-start">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 <span>Online agora</span>
@@ -112,40 +141,6 @@ export function HeroSection() {
                 </div>
                 <span>4.9/5 (127 avaliações)</span>
               </div>
-            </div>
-          </div>
-
-          {/* Image */}
-          <div className={`relative ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-            <div className="relative">
-              {/* Main Image */}
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl card-hover">
-                <Image
-                  src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Yanca Pina - Psicóloga"
-                  width={600}
-                  height={700}
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-card p-6 rounded-xl shadow-lg border border-primary/10 animate-float z-20">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">Consulta Online</div>
-                    <div className="text-sm text-muted-foreground">Disponível 24/7</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Background Decorations */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 decoration-rose rounded-full -z-10" />
-              <div className="absolute -bottom-12 -right-12 w-32 h-32 decoration-lilac rounded-full -z-10" />
             </div>
           </div>
         </div>
